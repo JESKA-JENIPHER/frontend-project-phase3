@@ -1,9 +1,9 @@
 import React from "react";
-import useRequest from "./FetchHelper";
+
 
 function HomePage() {
   // state was here
-  const { data: players, error, loading } = useRequest('http://localhost:9292/players')
+  
   // useEffect was here
   return (
     <div>
