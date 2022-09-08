@@ -1,7 +1,11 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import Navbar from './components/Navbar';
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
+import Players from "./pages/Players";
+import Agents from "./pages/Agents";
+import Teams from "./pages/Teams";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   return (
@@ -10,12 +14,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact="true" path="/" element={<HomePage />} />
-          <Route path="/teachers" element={<TeachersPage />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/students" element={<StudentsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/teachers/:id" element={<SpecificTeacher />} />
-          <Route path="/courses/:id" element={<SpecificCourse />} />
+          <Route path="/players" element={<Players />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/teams" element={<Teams />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </div>
     </BrowserRouter>
