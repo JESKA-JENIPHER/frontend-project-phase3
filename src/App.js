@@ -6,6 +6,7 @@ import Players from "./pages/Players";
 import Agents from "./pages/Agents";
 import Teams from "./pages/Teams";
 import AboutUs from "./pages/AboutUs";
+import Contacts from "./pages/Contacts";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/agents" element={<Agents />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/about" element={<Contacts />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,70 +1,128 @@
-import React from 'react'
-
-// import { NavLink } from "react-router-dom";
-
-//navbar from tailwind goes in here
+import { AppBar, Toolbar, Typography } from "@mui/material";
+import { Container } from "@mui/system";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+// import image from "../../src/esportlogo.jpg";
 
 const Navbar = () => {
-  return (
-    // <div className="mb-36 relative">
-    //   <div className="flex justify-between p-8 fixed w-full top-0 text-gray-600 bg-blue-50 z-40 font-averia">
-    //     <div className="text-3xl font-large">
-    //       <NavLink to="/" exact="true" className="relative">
-    //         <img
-    //           src="/images/dragonball.png"
-    //           alt="logoImg"
-    //           className="absolute w-[75px] h-16 -top-5 left-18 -z-10"
-    //         />
-    //         <span className="ml-8">
-    //           <strong className="mr-[18px]">
-    //             <span className="-ml-1">D</span>
-    //           </strong>
-    //           ragonballs University Portal
-    //         </span>
-    //       </NavLink>
-    //     </div>
-    //     <div className="text-xl">
-    //       <NavLink
-    //         to="/"
-    //         exact="true"
-    //         className="mr-10 hover:text-yellow-600 transition duration-150"
-    //       >
-    //         Home
-    //       </NavLink>
-    //       <NavLink
-    //         to="/courses"
-    //         exact="true"
-    //         className="mr-10 hover:text-yellow-600 transition duration-150"
-    //       >
-    //         Courses
-    //       </NavLink>
-    //       <NavLink
-    //         to="/students"
-    //         exact="true"
-    //         className="mr-10 hover:text-yellow-600 transition duration-150"
-    //       >
-    //         Students
-    //       </NavLink>
-    //       <NavLink
-    //         to="/teachers"
-    //         exact="true"
-    //         className="mr-10 hover:text-yellow-600 transition duration-150"
-    //       >
-    //         Teachers
-    //       </NavLink>
-    //       <NavLink
-    //         to="/about"
-    //         exact="true"
-    //         className="mr-10 hover:text-yellow-600 transition duration-150"
-    //       >
-    //         About
-    //       </NavLink>
-    //     </div>
-    //   </div>
-    // </div>
+  const navigate = useNavigate();
 
-    <>Nav</>
+  return (
+    <AppBar color="transparent" position="static">
+      <Container>
+        <Toolbar
+          sx={{
+            alignItems: "center",
+            display: "flex",
+            flexWrap: "inherit",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            onClick={() => navigate("/")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "25px",
+              fontWeight: 900,
+              letterSpacing: ".2rem",
+              color: "#0d80fd",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            {/* <img
+              src={image}
+              alt="logo"
+              style={{ maxHeight: "40px", maxWidth: "60px", cursor: "pointer" }}
+            /> */}
+            SPORTY_SPORT
+          </Typography>
+
+          <Typography
+            onClick={() => navigate("/players")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "##101415",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            Players
+          </Typography>
+
+          <Typography
+            onClick={() => navigate("/agents")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#101415",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            Agents
+          </Typography>
+
+          <Typography
+            onClick={() => navigate("/teams")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#101415",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            Teams
+          </Typography>
+
+          <Typography
+            onClick={() => navigate("/about")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#101415",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            About_Us
+          </Typography>
+
+          <Typography
+            onClick={() => navigate("/contact")}
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Montserrat",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#101415",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            Contact_Us
+          </Typography>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 
-export default Navbar
+export default Navbar;
