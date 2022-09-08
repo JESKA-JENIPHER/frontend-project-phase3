@@ -78,22 +78,6 @@ const PlayerDetails = ({totalPlayers, deletePlayer}) => {
                 display="flex"
                 justifyContent="flex-end"
                 alignItems="flex-end"
-                onClick={() => navigate(`/players/${player.id}`)}
-              >
-                <Button 
-                variant="contained" 
-                
-                >
-                  EDIT
-                </Button>
-              </Box>
-              </StyledTableCell>
-              <StyledTableCell align="right">
-              <Box
-                m={1}
-                display="flex"
-                justifyContent="flex-end"
-                alignItems="flex-end"
               >
                 <Button 
                 variant="contained" 
