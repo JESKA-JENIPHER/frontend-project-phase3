@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import image from "../../src/esportlogo.jpg";
+// import image from "../../src/footballer.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ const Navbar = () => {
         <Toolbar
           sx={{
             alignItems: "center",
+           
             display: "flex",
             flexWrap: "inherit",
             justifyContent: "space-between",
@@ -48,7 +49,7 @@ const Navbar = () => {
               fontFamily: "Montserrat",
               fontSize: "15px",
               fontWeight: 700,
-              color: "##101415",
+              color: "#101415",
               textDecoration: "none",
               cursor: "pointer",
             }}

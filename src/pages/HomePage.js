@@ -7,6 +7,7 @@ function HomePage() {
   // useEffect was here
   return (
     <div>
+      
       {error}
       {
         loading ? <h1>Loading...</h1> :
