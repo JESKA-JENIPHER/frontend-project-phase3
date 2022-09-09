@@ -2,7 +2,6 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import image from "../../src/footballer.webp";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -28,16 +27,11 @@ const Navbar = () => {
               fontSize: "25px",
               fontWeight: 900,
               letterSpacing: ".2rem",
-              color: "#0d80fd",
+              color: "white",
               textDecoration: "none",
               cursor: "pointer",
             }}
           >
-            {/* <img
-              src={image}
-              alt="logo"
-              style={{ maxHeight: "40px", maxWidth: "60px", cursor: "pointer" }}
-            /> */}
             SPORTY_SPORT
           </Typography>
 
