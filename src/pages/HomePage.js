@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"
+import "./Homepage.css"
 
 
 function HomePage() {
@@ -7,7 +7,7 @@ function HomePage() {
   
   // useEffect was here
   return (
-    <div>
+    <div className="master" >
       
       
       
