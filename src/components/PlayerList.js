@@ -81,7 +81,7 @@ const PlayerDetails = ({totalPlayers, deletePlayer}) => {
               >
                 <Button 
                 variant="contained" 
-                color="error"
+                color="secondary"
                 onClick={() => {
                   deletePlayer(player.id);
                 }}

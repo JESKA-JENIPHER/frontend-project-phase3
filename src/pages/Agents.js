@@ -1,18 +1,27 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState, React } from "react";
+import { Table, TableCell, TableRow, TableHead, TableBody,Button} from "@mui/material";
 
-import React, { useEffect, useState } from "react";
 
-function Agents() {
-  const [allAgents, setAgents] = useState([]);
-  const [data, setData] = useState([]);
+const Agents = () => {
+  const [agents, setAgents] = useState([]);
 
+  const url = "http://localhost:9292/agents";
+
+
+  //CRUD-GET
+  const getData = () => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setAgents(data);
+      });
+  };
   useEffect(() => {
-    fetch("http://localhost:9292/agents")
-      .then((r) => r.json())
-      .then((data) => setAgents(data));
+    getData();
   }, []);
 
-  // console.log(allPlayers);
+  //DELETE
 
   function deleteAgent(id) {
     fetch(`http://localhost:9292/agents/${id}`, {
@@ -20,83 +29,55 @@ function Agents() {
     })
       .then((r) => r.json())
       .then(() => {
-        const goThru = allAgents.filter((agent) => agent.id !== id);
+        const goThru = agents.filter((agent) => agent.id !== id);
         setAgents(goThru);
       });
   }
 
+  //POST
+
+  //Styling..
+  const tableStyle = {
+    width: "80%",
+    margin: "20px 10%",
+  };
+
   return (
-    <div>
-      <h1>Agents</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Years_of_experience</th>
-            <th scope="col">Status</th>
-            <Link
-              class="btn btn-primary mr-2"
-              to="/Add"
-              style={{
-                background: "Black",
-                border: "none",
-                width: "90px",
-                height: "40px",
-              }}
-            >
-              Add
-            </Link>
-            {/* <button style={{background:"black", width:"100px"}} class="btn btn-primary mr-2 btn-dark">Add</button> */}
-          </tr>
-        </thead>
-        <tbody>
-          <th scope="row">1</th>
-          {data.map((agent, index) => (
-            <tr>
-              <th scope="row">{index + 1}</th>
-              <td>{agent.name}</td>
-              <td>{agent.years_of_experience}</td>
-              <td>{agent.status}</td>
-              <Link
-                class="btn btn-primary mr-2"
-                to="/Edit/:id"
-                style={{
-                  background: "gray",
-                  border: "none",
-                  width: "90px",
-                  height: "40px",
-                }}
-              >
-                Edit
-              </Link>
-
-              {/* <Link class="btn btn-primary mr-2" to="/Edit" style={{background:"red", border:"none", width:"90px", height:"40px"}}>
-                    Delete
-                  </Link> */}
-
-              <button
-                style={{
-                  border: "none",
-                  background: "Red",
-                  width: "90px",
-                  marginBottom: "1.2rem",
-                  marginLeft: "10px",
-                }}
-                type="button"
-                class="btn btn-dark"
-                onClick={() => {
-                  deleteAgent(agent.id);
-                }}
-              >
-                Delete
-              </button>
-            </tr>
+    <>
+      <Table style={tableStyle}>
+        <TableHead>
+          <TableRow style={{ fontSize: "18px" }}>
+            <TableCell>ID</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Course ID</TableCell>
+            <TableCell>Teacher ID</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {agents.map((agent) => (
+            <TableRow key={agent.id}>
+              <TableCell>{agent.id}</TableCell>
+              <TableCell>{agent.name}</TableCell>
+              <TableCell>{agent.id_number}</TableCell>
+              <TableCell>{agent.public_contact}</TableCell>
+              <TableCell>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  style={{ margin: "0px 20px" }}
+                  onClick={() => {
+                    deleteAgent(agent.id);
+                  }}
+                >
+                  Delete
+                </Button>
+              </TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </TableBody>
+      </Table>
+    </>
   );
-}
+};
 
 export default Agents;
