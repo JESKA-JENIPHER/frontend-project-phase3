@@ -5,27 +5,29 @@ const Players = () => {
   const [allPlayers, setAllPlayers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/players")
+    fetch("https://sporty-sport.herokuapp.com/players")
       .then((r) => r.json())
       .then((data) => setAllPlayers(data));
   }, []);
 
   // console.log(allPlayers);
 
-  function deletePlayer(id) {
-    fetch(`http://localhost:9292/players/${id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then(() => {
-        const goThru = allPlayers.filter((player) => player.id !== id);
-        setAllPlayers(goThru);
-      });
-  }
+  //delete
+  // function deletePlayer(id) {
+  //   fetch(`https://sporty-sport.herokuapp.com/players/${id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((r) => r.json())
+  //     .then(() => {
+  //       const goThru = allPlayers.filter((player) => player.id !== id);
+  //       setAllPlayers(goThru);
+  //     });
+  // }
+  // deletePlayer = { deletePlayer };
 
   return (
     <>
-      <PlayerList totalPlayers={allPlayers} deletePlayer={deletePlayer} />
+      <PlayerList totalPlayers={allPlayers}  />
     </>
   );
 };
