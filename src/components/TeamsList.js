@@ -56,26 +56,12 @@ function TeamList({ allTeams, deleteTeam }) {
               <StyledTableCell component="th" scope="row">
                 {team.name}
               </StyledTableCell>
-              <StyledTableCell align="right">
+              <StyledTableCell>
                 {team.year_founded}
               </StyledTableCell>
-              <StyledTableCell align="right">{team.status}</StyledTableCell>
-              <Box
-                m={1}
-                display="flex"
-                justifyContent="flex-end"
-                alignItems="flex-end"
-              >
-                {/* <Button
-                  variant="contained"
-                  color="error"
-                  onClick={() => {
-                    deleteTeam(team.id);
-                  }}
-                >
-                  Delete
-                </Button> */}
-              </Box>
+              <StyledTableCell>
+                {team.status}
+              </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

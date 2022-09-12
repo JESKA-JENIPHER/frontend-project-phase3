@@ -52,7 +52,6 @@ const PlayerDetails = ({totalPlayers, deletePlayer}) => {
           <StyledTableCell>Player Id</StyledTableCell>
             <StyledTableCell>Player Name</StyledTableCell>
             <StyledTableCell align="center">Age</StyledTableCell>
-            <StyledTableCell align="center">Race</StyledTableCell>
             <StyledTableCell align="center">Nationality</StyledTableCell>
             <StyledTableCell align="center">Team_Id</StyledTableCell>
           </TableRow>
@@ -69,7 +68,6 @@ const PlayerDetails = ({totalPlayers, deletePlayer}) => {
                 {player.name}
               </StyledTableCell>
               <StyledTableCell align="center">{player.age}</StyledTableCell>
-              <StyledTableCell align="center">{player.race}</StyledTableCell>
               <StyledTableCell align="center">{player.nationality}</StyledTableCell>
               <StyledTableCell align="center">{player.team_id}</StyledTableCell>
               <StyledTableCell align="right">

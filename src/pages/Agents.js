@@ -57,7 +57,6 @@ const Agents = () => {
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>ID_Number</TableCell>
-              <TableCell>Public_contact</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -66,7 +65,6 @@ const Agents = () => {
                 <TableCell>{agent.id}</TableCell>
                 <TableCell>{agent.name}</TableCell>
                 <TableCell>{agent.id_number}</TableCell>
-                <TableCell>{agent.public_contact}</TableCell>
                 <TableCell>
                   <Button
                     variant="contained"
