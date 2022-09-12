@@ -5,7 +5,7 @@ const Teams = () => {
   const [allTeams, setAllTeams] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/Teams")
+    fetch("http://localhost:9292/teams")
       .then((r) => r.json())
       .then((data) => setAllTeams(data));
   }, []);

@@ -1,123 +1,82 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
-import { Container } from "@mui/system";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+// import "./NavBar.css";
 
-const Navbar = () => {
-  const navigate = useNavigate();
+export default function NavBar() {
+  const [navbar, setNavbar] = useState(false);
 
   return (
-    <AppBar color="transparent" position="static">
-      <Container>
-        <Toolbar
-          sx={{
-            alignItems: "center",
-           
-            display: "flex",
-            flexWrap: "inherit",
-            justifyContent: "space-between",
-          }}
-        >
-          <Typography
-            onClick={() => navigate("/")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "25px",
-              fontWeight: 900,
-              letterSpacing: ".2rem",
-              color: "white",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
+    <nav className="w-full bg-white shadow">
+      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div>
+          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <a href="javascript:void(0)">
+              <h2 className="text-2xl font-bold">SPORTY_SPORT</h2>
+            </a>
+            <div className="md:hidden">
+              <button
+                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                onClick={() => setNavbar(!navbar)}
+              >
+                {navbar ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
+            }`}
           >
-            SPORTY_SPORT
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/players")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "15px",
-              fontWeight: 700,
-              color: "#101415",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            Players
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/agents")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "15px",
-              fontWeight: 700,
-              color: "#101415",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            Agents
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/teams")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "15px",
-              fontWeight: 700,
-              color: "#101415",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            Teams
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/about")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "15px",
-              fontWeight: 700,
-              color: "#101415",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            About_Us
-          </Typography>
-
-          <Typography
-            onClick={() => navigate("/contact")}
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "Montserrat",
-              fontSize: "15px",
-              fontWeight: 700,
-              color: "#101415",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            Contact_Us
-          </Typography>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              <li>
+                <NavLink to="/players">Players</NavLink>
+              </li>
+              <li>
+                <NavLink to="/agents">Agents</NavLink>
+              </li>
+              <li>
+                <NavLink to="/teams">Teams</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about">About_Us</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact">Contact_Us</NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
-};
-
-export default Navbar;
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState, React } from "react";
-import { Table, TableCell, TableRow, TableHead, TableBody,Button} from "@mui/material";
+import { Table, TableCell, TableRow, TableHead, TableBody, Button, ThemeProvider } from "@mui/material";
+// import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
 
 
 const Agents = () => {
@@ -42,40 +43,47 @@ const Agents = () => {
     margin: "20px 10%",
   };
 
+  //  const darkTheme = createTheme({
+  //    palette: {
+  //      mode: "light",
+  //    },
+  //  });
   return (
     <>
-      <Table style={tableStyle}>
-        <TableHead>
-          <TableRow style={{ fontSize: "18px" }}>
-            <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Course ID</TableCell>
-            <TableCell>Teacher ID</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {agents.map((agent) => (
-            <TableRow key={agent.id}>
-              <TableCell>{agent.id}</TableCell>
-              <TableCell>{agent.name}</TableCell>
-              <TableCell>{agent.id_number}</TableCell>
-              <TableCell>{agent.public_contact}</TableCell>
-              <TableCell>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  style={{ margin: "0px 20px" }}
-                  onClick={() => {
-                    deleteAgent(agent.id);
-                  }}
-                >
-                  Delete
-                </Button>
-              </TableCell>
+      {/* <ThemeProvider theme={darkTheme}> */}
+        <Table style={tableStyle}>
+          <TableHead>
+            <TableRow style={{ fontSize: "18px" }}>
+              <TableCell>ID</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>ID_Number</TableCell>
+              <TableCell>Public_contact</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+          </TableHead>
+          <TableBody>
+            {agents.map((agent) => (
+              <TableRow key={agent.id}>
+                <TableCell>{agent.id}</TableCell>
+                <TableCell>{agent.name}</TableCell>
+                <TableCell>{agent.id_number}</TableCell>
+                <TableCell>{agent.public_contact}</TableCell>
+                <TableCell>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    style={{ margin: "0px 20px" }}
+                    onClick={() => {
+                      deleteAgent(agent.id);
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      {/* </ThemeProvider> */}
     </>
   );
 };

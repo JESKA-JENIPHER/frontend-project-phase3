@@ -2,8 +2,11 @@ import React from 'react'
 
 function AboutUs() {
   return (
-    <div>AboutUs</div>
-  )
+    <>
+      <p style={{ color: "blue" }}>Reknown Agent Finding Agency</p>
+      <p>Feel Free to contact sporty_sport</p>
+    </>
+  );
 }
 
 export default AboutUs

@@ -79,15 +79,15 @@ const PlayerDetails = ({totalPlayers, deletePlayer}) => {
                 justifyContent="flex-end"
                 alignItems="flex-end"
               >
-                <Button 
+                {/* <Button 
                 variant="contained" 
                 color="secondary"
                 onClick={() => {
                   deletePlayer(player.id);
                 }}
-                >
-                  Delete
-                </Button>
+                > */}
+                  {/* Delete */}
+                {/* </Button> */}
               </Box>
               </StyledTableCell>
             </TableRow>
