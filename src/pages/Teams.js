@@ -13,17 +13,6 @@ const Teams = () => {
   // console.log(allTeams)
 
 
-  function deleteTeam(id) {
-    fetch(`http://localhost:9292/teams/${id}`, {
-      method: "DELETE",
-    })
-      .then((r) => r.json())
-      .then(() => {
-        const goThru = allTeams.filter((team) => team.id !== id);
-        setAllTeams(goThru);
-      });
-  }
-
   return (
     <div>
       <TeamsList
