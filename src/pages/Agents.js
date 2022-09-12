@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import TeacherForm from "../Components/TeacherForm";
-import TeachersDetails from "../Components/TeachersDetails";
+import AgentForm from "../components/AgentForm";
+import AgentsDetails from "../components/AgentsDetails";
 //We need all teachers to be displayed here
 //We need to edit teachers details, add, or delete
 
@@ -13,13 +13,12 @@ const Agents = () => {
       .then((data) => setAllAgents(data));
   }, []);
 
-  // console.log(allTeachers)
 
   function handlePosting(data) {
-    setAllTeachers([...allAgents, data]);
+    setAllAgents([...allAgents, data]);
   }
 
-  function deleteTeacher(id) {
+  function deleteAgent(id) {
     fetch(`https://sporty-sport.herokuapp.com/agents/${id}`, {
       method: "DELETE",
     })
@@ -31,14 +30,14 @@ const Agents = () => {
   }
 
   function handleUpdateAgent(updatedAgent) {
-    const updatedAgent = allAgents.map((agent) => {
+    const updated_Agent = allAgents.map((agent) => {
       if (agent.id === updatedAgent.id) {
         return updatedAgent;
       } else {
         return agent;
       }
     });
-    setAllAgents(updatedAgent);
+    setAllAgents(updated_Agent);
   }
 
   return (
