@@ -6,7 +6,7 @@ import { Table, TableCell, TableRow, TableHead, TableBody, Button, ThemeProvider
 const Agents = () => {
   const [agents, setAgents] = useState([]);
 
-  const url = "http://localhost:9292/agents";
+  const url = "https://sporty-sport.herokuapp.com/agents";
 
 
   //CRUD-GET
@@ -25,7 +25,7 @@ const Agents = () => {
   //DELETE
 
   function deleteAgent(id) {
-    fetch(`http://localhost:9292/agents/${id}`, {
+    fetch(`https://sporty-sport.herokuapp.com/agents/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
