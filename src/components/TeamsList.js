@@ -66,7 +66,7 @@ function TeamList({ allTeams, deleteTeam }) {
                 justifyContent="flex-end"
                 alignItems="flex-end"
               >
-                <Button
+                {/* <Button
                   variant="contained"
                   color="error"
                   onClick={() => {
@@ -74,7 +74,7 @@ function TeamList({ allTeams, deleteTeam }) {
                   }}
                 >
                   Delete
-                </Button>
+                </Button> */}
               </Box>
             </StyledTableRow>
           ))}
