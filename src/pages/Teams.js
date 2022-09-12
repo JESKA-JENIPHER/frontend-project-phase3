@@ -5,7 +5,7 @@ const Teams = () => {
   const [allTeams, setAllTeams] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/teams")
+    fetch("https://sporty-sport.herokuapp.com/teams")
       .then((r) => r.json())
       .then((data) => setAllTeams(data));
   }, []);
@@ -17,7 +17,6 @@ const Teams = () => {
     <div>
       <TeamsList
         allTeams={allTeams}
-        deleteTeam={deleteTeam}
       />
     </div>
   );
